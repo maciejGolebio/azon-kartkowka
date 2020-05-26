@@ -10,11 +10,10 @@ import java.net.URLConnection;
 public class Main {
     public final static String API_KEY_VALUE = "nxr1HOr5ZgMhT4epa43OxoPfv8HskX8TCv1cASS2";
     public final static String API_KEY = "X-Api-Key";
-    public final static String ADDRESS = "https://api.e-science.pl/api/azon/entry/16138/";
-
+    public final static String ADDRESS = "https://api.e-science.pl/api/azon/";
     @SneakyThrows
-    public static void main(String[] args) {
-        URL myURL = new URL(ADDRESS);
+    public static void print_title_id_submitter_by_id(String entity, long id){
+        URL myURL = new URL(ADDRESS+entity+"/"+id+"/");
         URLConnection connection = myURL.openConnection();
         connection.setRequestProperty(API_KEY, API_KEY_VALUE);
         connection.setRequestProperty("accept", "application/json");
@@ -32,5 +31,11 @@ public class Main {
         System.out.println("id = " + jsonObject.getInt("pk") + "\n");
         System.out.println("deponujacy = " + jsonObject.getString("submitter"));
 
+    }
+
+    public static void main(String[] args) {
+        String entity = "entry";
+        long id = 16138L;
+        Main.print_title_id_submitter_by_id(entity,id);
     }
 }
