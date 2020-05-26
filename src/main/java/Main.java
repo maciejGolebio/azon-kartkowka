@@ -32,14 +32,8 @@ public class Main {
         Connection connection = DriverManager
                 .getConnection("jdbc:sqlite:D:\\Programming\\JAVA\\azon\\src\\main\\resources\\sample.db");
         Statement statement = connection.createStatement();
-        //statement.setQueryTimeout(5);
-        //id = 1;
-        //title = "string";
-        //submitter = "suvasd";
         statement.
                 executeUpdate("create table if not exists azon(id integer , title TEXT, submitter varchar)");
-        //statement.executeUpdate("use azon");
-
         String query = "insert into azon values(" + id + ",'" + title.replaceAll(",", "") + "','" + submitter + "');";
 
         statement.executeUpdate(query);
