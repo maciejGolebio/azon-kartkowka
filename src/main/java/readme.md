@@ -1,9 +1,7 @@
 # wyjscie konsoli dla danych w psvm: 
 
-title = Publication industrielle des machines, outils et appareils: les plus perfectionnés et les plus récents employés dans les différentes branches de l'industrie française et étrangère. T. 16, Texte
+title = Opornik dekadowy
 
-id = 16138
+id = 1618
 
-deponujacy = Olga Schabowicz
-
-nie dołączam pom.xml
+deponujacy = Kamila Kopańska
