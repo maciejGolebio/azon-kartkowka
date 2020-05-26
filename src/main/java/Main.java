@@ -7,12 +7,15 @@ import java.net.URL;
 import java.net.URLConnection;
 
 
+/**
+ * @author Maciej Gołebiowski 241496
+ */
 public class Main {
     public final static String API_KEY_VALUE = "nxr1HOr5ZgMhT4epa43OxoPfv8HskX8TCv1cASS2";
     public final static String API_KEY = "X-Api-Key";
     public final static String ADDRESS = "https://api.e-science.pl/api/azon/";
     @SneakyThrows
-    public static void print_title_id_submitter_by_id(String entity, long id){
+    public static void printTitleIdSubmitterById(String entity, long id){
         URL myURL = new URL(ADDRESS+entity+"/"+id+"/");
         URLConnection connection = myURL.openConnection();
         connection.setRequestProperty(API_KEY, API_KEY_VALUE);
@@ -36,6 +39,6 @@ public class Main {
     public static void main(String[] args) {
         String entity = "entry";
         long id = 16138L;
-        Main.print_title_id_submitter_by_id(entity,id);
+        Main.printTitleIdSubmitterById(entity,id);
     }
 }
